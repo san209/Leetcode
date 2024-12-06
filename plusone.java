@@ -9,7 +9,6 @@ class plusone {
             num = num*10 + digits[i];
         }
         num++;
-        System.out.println(num);
         int temp = num;
 
         while(num != 0) {
