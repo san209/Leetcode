@@ -4,6 +4,7 @@ class romanToInteger {
         int n = s.length();
         int arr[] = new int[n];
         int num = 0;
+        int j = 0;
 
         for(int i=0; i<n; i++) {
             if(s.charAt(i) == 'I') {
@@ -29,15 +30,21 @@ class romanToInteger {
             }
         }
         
-        for(int i=0; i<n; i++) {
+        for(int i=0; i<n-1; i++) {
             if(arr[i] < arr[i+1]) {
                 num = num + arr[i+1] - arr[i];
                 i++;
+                j = i;
             }
             else {
                 num = num + arr[i];
             }
         }
-        System.out.println(num);
+        if(j == n-1) {
+            System.out.println(num);
+        }
+        else {
+            System.out.println(num+arr[n-1]);
+        }
     }
 }
