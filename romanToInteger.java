@@ -1,6 +1,6 @@
 class romanToInteger {
     public static void main(String args[]) {
-        String s = "MCMXCIV";
+        String s = "V";
         int n = s.length();
         int arr[] = new int[n];
         int num = 0;
@@ -30,21 +30,27 @@ class romanToInteger {
             }
         }
         
-        for(int i=0; i<n-1; i++) {
-            if(arr[i] < arr[i+1]) {
-                num = num + arr[i+1] - arr[i];
-                i++;
-                j = i;
+        if(n > 1) {
+            for(int i=0; i<n-1; i++) {
+                if(arr[i] < arr[i+1]) {
+                    num = num + arr[i+1] - arr[i];
+                    i++;
+                    j = i;
+                }
+                else {
+                    num = num + arr[i];
+                }
+            }
+    
+            if(j == n-1) {
+                System.out.println(num);
             }
             else {
-                num = num + arr[i];
+               System.out.println(num+arr[n-1]);
             }
         }
-        if(j == n-1) {
-            System.out.println(num);
-        }
         else {
-            System.out.println(num+arr[n-1]);
+            System.out.println(arr[n-1]);
         }
     }
 }
