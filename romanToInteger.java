@@ -1,6 +1,6 @@
 class romanToInteger {
     public static void main(String args[]) {
-        String s = "V";
+        String s = "XII";
         int n = s.length();
         int arr[] = new int[n];
         int num = 0;
