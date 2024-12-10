@@ -1,13 +1,13 @@
 class longestCommonPrefix {
     public static void main(String args[]) {
-        String str[] = {"dog","racecar",""};
+        String str[] = {"ca","c","bba","bacb","bcb"};
         int n = str.length;
         int c[] = new int[n-1];
         int counter = 0;
         int smallest = 0;
         int flag = 0;
 
-        for(int i=0; i<=n; i++) {
+        for(int i=0; i<n; i++) {
             if(str[i] == "") {
                 flag = 1;
                 break;
@@ -44,9 +44,9 @@ class longestCommonPrefix {
                         counter = 0;
                     }
                 }
+                smallest = c[0];
                 if(c.length-1 != 0) {
                     for(int i=0; i<c.length-1; i++) {
-                        smallest = c[i];
                         if(smallest > c[i+1]) {
                             smallest = c[i+1];
                         }
